@@ -1,0 +1,177 @@
+Validade  
+========================================================
+author: Amer Cavalheiro Hamdan
+date: 20/11/2013
+
+
+Resumo
+========================================================
+<br>
+- DefiniÃ§Ã£o de validade
+- Desenvolvimento histÃ³rico
+- MÃ©todos
+
+
+DefiniÃ§Ã£o
+========================================================
+<br>
+- Ã o grau em que um instrumento de medida **mede aquilo que pretende medir**. 
+- Ã a representaÃ§Ã£o correta da informaÃ§Ã£o.
+- ÃÂ a **questaÃ§Ã£o fundamental** que se deve fazer na construÃ§Ã£o e na correÃ§Ã£o dos testes.
+
+
+Desenvolvimento histÃ³rico
+=========================================================
+<br>
+-**Abordagem descritiva**: Ãnfase no conteÃºdo.
+-**Abordagem num critÃ©rio estabelecido**: Ãnfase na prediÃ§Ã£o.    
+-**Abordagem no construto**: Ãnfase em hipÃ³teses empÃ­Â­ricas.
+
+
+MÃ©todos
+=======================================================
+<br>
+- **Validade de face**  
+- **Validade de ConteÃºdo** 
+- **Validade de critÃ©rio** 
+- **Validade de construto**
+
+
+Validade de face
+=====================================================
+<br>
+- Ã o grau em que um instrumento de medida **parece** medir acuradamente uma variÃ¡vel.
+- nÃ£o hÃ¡ demostraÃ§Ã£o empÃ­Â­rica
+- baseada na opiniÃ£o de especialistas
+
+
+Validade de conteÃºdo
+=====================================================
+<br>
+- Ã o grau em que um instrumento de medida mede acuradamente o **conteÃºdo** de um comportamento.
+- Ã realizado pela anÃ¡lise dos itens mediante a opiniÃ£o de juÃ­Â­zes. 
+- Ex. Teste de conhecimento.
+
+
+Validade de critÃ©rio
+======================================================
+<br>
+- Ã grau em que um instrumento de medida de **prevÃª** acuradamente o comportamento numa medida critÃ©rio.
+- ÃÂ expressa em termos de coeficiente de correlaÃ§Ã£o entre a medida investigada e a medida critÃ©rio.
+
+
+Tipos de validade de critÃ©rio
+==========================================================
+<br>
+a. **Validade convergente (ou preditiva)** Ã© a determinaÃ§Ã£o da validade de uma medida, demonstrando que ela relaciona-se com outras variÃ¡veis da forma prevista.
+
+b. **Validade discriminante** Ã© a determinaÃ§Ã£o da validade de uma medida, demonstrando que ela nÃ£o se relaciona com outras variÃ¡veis com os quais nÃ£o deveria estar teoricamente relacionada.
+
+
+Exemplo 1
+=====================================================
+<br>
+```{r, echo=FALSE}
+animais = c(10, 13, 14, 11, 10, 17, 10, 7, 12, 13)
+frutas = c(11, 11, 14, 9, 7, 14, 9, 4, 13, 12)
+meem = c(27, 29, 27, 18, 27, 25, 28, 24, 25, 28)
+dados1 = data.frame(animais, frutas, meem)
+dados1
+```
+
+Exemplo 1
+=========================================================
+animais
+```{r, echo=FALSE}
+summary(animais)
+```
+frutas
+```{r, echo=FALSE}
+summary(frutas)
+```
+meem
+```{r, echo=FALSE}
+summary(meem)
+```
+
+
+Exemplo 1
+=====================================================
+```{r, echo=FALSE}
+plot(animais, meem)
+correl = round(cor(dados1), 2)
+correl
+```
+
+
+Quiz 1
+=========================================================
+<br>
+A validade ___________ significa que o teste apresenta baixa correlaÃ§Ã£o com outros testes ou fontes de informaÃ§Ã£o relativas a um construto diferente.    
+<br>
+a. divergente   
+b. consequencial   
+c. convergente    
+d. discriminante    
+e. conteÃºdo    
+
+
+
+Validade de construto
+==========================================================
+<br>
+- Ã o grau em que um instrumento de medida mede acuradamente o construto teÃ³rico que pretende avaliar.
+
+
+
+Tipos de validade de construto
+==========================================================
+<br>
+**a. Estrutura Interna** consiste em calcular a correlaÃ§Ã£o que existe entre cada item do teste com restante do item do teste.
+
+**b. AnÃ¡lise Fatorial (AF)** Ã© uma tÃ©cnica estatÃ­stica que busca a identificaÃ§Ã£o de dimensÃµes de variabilidade comuns existentes em um conjunto de dados. O intuito Ã© desvendar dimensÃµes que nÃ£o sÃ£o evidenciadas em si. Estas dimensÃµes sÃ£o chamadas de fator.
+
+Exemplo 2
+=======================================================
+```{r, echo=FALSE}
+require(psych)
+data(attitude)
+head(attitude)
+```
+
+
+Exemplo 2: Coeficiente alfa
+======================================================
+```{r,echo=FALSE}
+alpha(attitude)
+```
+
+
+Exemplo 3: AnÃ¡lise fatorial
+======================================================
+```{r,echo=FALSE}
+data(Thurstone)
+head(Thurstone)
+```
+
+
+Exemplo 3: AnaÄºise fatorial
+======================================================
+```{r, echo=FALSE}
+f3t <- fa(Thurstone,3,n.obs=213)
+fa.diagram(f3t)
+```
+
+
+Quiz 2
+========================================================
+<br>
+A validade ____________ investiga atÃ© que ponto hÃ¡ evidÃªncias de que um teste mede um determinado construto hipotÃ©tico.    
+<br>
+a. de conteÃºdo    
+b. de construto    
+c. de prediÃ§Ã£o     
+d. hipotÃ©tica      
+e. evidente     
+
+
